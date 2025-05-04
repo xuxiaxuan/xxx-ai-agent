@@ -73,6 +73,19 @@
             <version>4.4.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <version>5.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-markdown-document-reader</artifactId>
+            <version>1.0.0-M6</version>
+        </dependency>
+
+
         <!--aliyun灵机大模型服务-->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -81,6 +94,12 @@
             <version>2.19.1</version>
         </dependency>
 
+        <!--结构化-->
+        <dependency>
+            <groupId>com.github.victools</groupId>
+            <artifactId>jsonschema-generator</artifactId>
+            <version>4.38.0</version>
+        </dependency>
 
         <!--手动指定1.18.36版本号-->
         <dependency>

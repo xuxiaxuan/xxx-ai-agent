@@ -1,8 +1,12 @@
 package com.xxx.xxxaiagent.rag;
 
+import com.xxx.xxxaiagent.rag.LoveAppDocumentLoader;
+import com.xxx.xxxaiagent.rag.MyKeywordEnricher;
+import com.xxx.xxxaiagent.rag.MyTokenTextSplitter;
 import jakarta.annotation.Resource;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingModel;
+import org.springframework.ai.transformer.splitter.TokenTextSplitter;
 import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.context.annotation.Bean;
@@ -11,11 +15,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 /**
- * @Description: // 类说明，在创建类时要填写
- * @ClassName: LoveAppVectorStoreConfig    // 类名，会自动填充
- * @Author: 许夏轩          // 创建者
- * @Date: 04/05/2025 3:50 下午   // 时间
- * @Version: 1.0     // 版本
+ * 恋爱大师向量数据库配置（初始化基于内存的向量数据库 Bean）
  */
 @Configuration
 public class LoveAppVectorStoreConfig {
@@ -23,11 +23,22 @@ public class LoveAppVectorStoreConfig {
     @Resource
     private LoveAppDocumentLoader loveAppDocumentLoader;
 
+    @Resource
+    private MyTokenTextSplitter myTokenTextSplitter;
+
+    @Resource
+    private MyKeywordEnricher myKeywordEnricher;
+
     @Bean
-    VectorStore loveAppVectorStore(EmbeddingModel dashscopeEmbeddingModel){
+    VectorStore loveAppVectorStore(EmbeddingModel dashscopeEmbeddingModel) {
         SimpleVectorStore simpleVectorStore = SimpleVectorStore.builder(dashscopeEmbeddingModel).build();
+        // 加载文档
         List<Document> documentList = loveAppDocumentLoader.loadMarkdowns();
-        simpleVectorStore.add(documentList);
+        // 自主切分文档
+//        List<Document> splitDocuments = myTokenTextSplitter.splitCustomized(documentList);
+        // 自动补充关键词元信息
+        List<Document> enrichedDocuments = myKeywordEnricher.enrichDocuments(documentList);
+        simpleVectorStore.add(enrichedDocuments);
         return simpleVectorStore;
     }
 }

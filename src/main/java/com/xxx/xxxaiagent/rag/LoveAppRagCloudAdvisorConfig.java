@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Description: // 类说明，在创建类时要填写
+ * @Description: 自定义基于阿里云知识库服务的 RAG 增强顾问
  * @ClassName: LoveAppRagCloudAdvisorConfig    // 类名，会自动填充
  * @Author: 许夏轩          // 创建者
  * @Date: 04/05/2025 4:31 下午   // 时间

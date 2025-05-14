@@ -23,13 +23,17 @@ public class ToolRegistration {
         ResourceDownloadTool resourceDownloadTool = new ResourceDownloadTool();
         TerminalOperationTool terminalOperationTool = new TerminalOperationTool();
         PDFGenerationTool pdfGenerationTool = new PDFGenerationTool();
+        HTMLGenerationTool htmlGenerationTool=new HTMLGenerationTool();
+        MarkdownGenerationTool markdownGenerationTool=new MarkdownGenerationTool();
         return ToolCallbacks.from(
                 fileOperationTool,
                 webSearchTool,
                 webScrapingTool,
                 resourceDownloadTool,
                 terminalOperationTool,
-                pdfGenerationTool
+                pdfGenerationTool,
+                htmlGenerationTool,
+                markdownGenerationTool
         );
     }
 }

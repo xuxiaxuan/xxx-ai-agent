@@ -33,3 +33,5 @@ knife4j:
 logging:
   level:
     org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor: debug
+# 修改日志级别，查看 Spring AI 更多调用细节
+    org.springframework.ai: DEBUG

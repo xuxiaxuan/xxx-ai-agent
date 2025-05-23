@@ -78,10 +78,10 @@ class LoveAppTest {
         //testMessage("保存我的恋爱档案为文件");
 
         // 测试 PDF 生成
-        //testMessage("生成一份‘七夕约会计划’PDF，包含餐厅预订、活动流程和礼物清单");
+        testMessage("生成一份‘520约会计划’PDF，包含餐厅预订、活动流程和礼物清单");
 
         //测试html生成
-        testMessage("生成一份‘求婚计划’html，包含一系列流程和爱心等");
+        //testMessage("生成一份‘求婚计划’html，包含一系列流程和爱心等");
 
         //测试markdown生成
         //testMessage("生成一份‘七夕约会计划’markdown，包含餐厅预订、活动流程和礼物清单");

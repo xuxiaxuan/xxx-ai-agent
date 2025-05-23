@@ -25,6 +25,7 @@ public class ToolRegistration {
         PDFGenerationTool pdfGenerationTool = new PDFGenerationTool();
         HTMLGenerationTool htmlGenerationTool=new HTMLGenerationTool();
         MarkdownGenerationTool markdownGenerationTool=new MarkdownGenerationTool();
+        TerminateTool terminateTool = new TerminateTool();
         return ToolCallbacks.from(
                 fileOperationTool,
                 webSearchTool,
@@ -33,7 +34,8 @@ public class ToolRegistration {
                 terminalOperationTool,
                 pdfGenerationTool,
                 htmlGenerationTool,
-                markdownGenerationTool
+                markdownGenerationTool,
+                terminateTool
         );
     }
 }

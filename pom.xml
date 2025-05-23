@@ -30,6 +30,19 @@
         <java.version>21</java.version>
     </properties>
     <dependencies>
+        <!--springai-mcp-server-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.ai</groupId>-->
+<!--            <artifactId>spring-ai-mcp-server-spring-boot-starter</artifactId>-->
+<!--        </dependency>-->
+
+        <!--springai-mcp-client-->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-mcp-client-spring-boot-starter</artifactId>
+            <version>1.0.0-M6</version>
+        </dependency>
+
         <!-- jsoup HTML 解析库 -->
         <dependency>
             <groupId>org.jsoup</groupId>
